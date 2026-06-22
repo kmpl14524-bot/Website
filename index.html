@@ -1,400 +1,105 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIPTAS Management Private Limited | Your Financial Partner</title>
-    <!-- Tailwind CSS for Beautiful, Professional Styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons for Visual Symbols -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        kiptas: {
-                            navy: '#0A2540',
-                            gold: '#D4AF37',
-                            green: '#00875A',
-                            light: '#F8FAFC'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Styling overrides for clean formatting and hidden elements -->
-    <style>
-        .goog-te-gadget iframe { display: none !important; }
-        .goog-te-gadget { font-size: 0px !important; }
-        .goog-te-gadget select {
-            background-color: #111827 !important;
-            color: #ffffff !important;
-            border: 1px solid #D4AF37 !important;
-            padding: 6px 12px !important;
-            border-radius: 6px !important;
-            font-size: 14px !important;
-            outline: none !important;
-            cursor: pointer;
-        }
-        body { top: 0px !important; }
-        .skiptranslate iframe { display: none !important; }
-    </style>
-</head>
-<body class="bg-kiptas-light text-slate-800 font-sans antialiased">
-
-    <!-- FIXED TOP NAVIGATION BAR (With Logo fixed in top left corner) -->
-    <nav class="fixed w-full bg-kiptas-navy/95 backdrop-blur-md text-white z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo Space (Top Left Corner) -->
-            <a href="#" class="flex items-center gap-3">
-                <img src="logo.png" alt="KIPTAS Logo" class="h-14 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
-                <div id="text-logo" class="hidden">
-                    <span class="text-xl font-bold tracking-wider text-white">KIPTAS <span class="text-kiptas-gold">MANAGEMENT</span></span>
-                </div>
-            </a>
-
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
-                <a href="#about" class="hover:text-kiptas-gold transition-colors">About Us</a>
-                <a href="#services" class="hover:text-kiptas-gold transition-colors">Services</a>
-                <a href="#calculators" class="hover:text-kiptas-gold transition-colors">Financial Calculators</a>
-                <a href="#requirement-form" class="hover:text-kiptas-gold transition-colors">Submit Requirement</a>
-                
-                <!-- GOOGLE TRANSLATE BOX FOR DESKTOP -->
-                <div id="google_element_desktop"></div>
-
-                <a href="tel:8527404538" class="flex items-center gap-2 bg-kiptas-gold text-kiptas-navy px-4 py-2 rounded-lg font-bold hover:bg-yellow-500 transition-all whitespace-nowrap">
-                    <i data-lucide="phone" class="w-4 h-4"></i> Call 8527404538
-                </a>
-            </div>
-
-            <!-- Mobile Menu button -->
-            <button id="menu-btn" class="lg:hidden text-white hover:text-kiptas-gold transition-colors">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-        
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-kiptas-navy border-t border-slate-700 px-6 py-4 space-y-4">
-            <a href="#about" class="block text-slate-200 hover:text-kiptas-gold py-1">About Us</a>
-            <a href="#services" class="block text-slate-200 hover:text-kiptas-gold py-1">Services</a>
-            <a href="#calculators" class="block text-slate-200 hover:text-kiptas-gold py-1">Financial Calculators</a>
-            <a href="#requirement-form" class="block text-slate-200 hover:text-kiptas-gold py-1">Submit Requirement</a>
-            
-            <!-- GOOGLE TRANSLATE BOX FOR MOBILE -->
-            <div class="py-2 border-t border-b border-slate-700/50">
-                <p class="text-xs text-slate-400 mb-2 font-bold uppercase tracking-wider">Select Language / भाषा चुनें</p>
-                <div id="google_element_mobile"></div>
-            </div>
-
-            <a href="tel:8527404538" class="block text-center bg-kiptas-gold text-kiptas-navy py-2.5 rounded-lg font-bold">Call 8527404538</a>
-        </div>
-    </nav>
-
-    <!-- HERO WELCOME SECTION -->
-    <section class="pt-40 pb-24 bg-gradient-to-br from-kiptas-navy to-slate-900 text-white relative overflow-hidden">
-        <!-- Dynamic Background Watermark Layer -->
-        <div class="absolute inset-0 z-0 opacity-10 flex items-center justify-center pointer-events-none scale-100 blur-[1px]">
-            <img src="logo.png" alt="KIPTAS Watermark Background" class="max-w-2xl w-full h-auto object-contain">
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
-            <div class="inline-block bg-white/10 text-kiptas-gold border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
-                30 Years of Trusted Financial & Insurance Experience
-            </div>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
-                Your Financial & Insurance Partner For <span class="text-kiptas-gold">Every Goal</span>
-            </h1>
-            <p class="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto font-medium">
-                Protect Today • Invest Wisely • Secure Tomorrow
-            </p>
-
-            <!-- Quick Action Buttons (Optimized for balance) -->
-            <div class="flex flex-wrap justify-center gap-4 pt-8">
-                <a href="#requirement-form" class="bg-kiptas-gold text-kiptas-navy hover:bg-yellow-500 px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg text-sm sm:text-base tracking-wide">
-                    Submit Financial Requirement
-                </a>
-                <a href="https://wa.me/9415480586" target="_blank" class="bg-kiptas-green hover:bg-emerald-700 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg flex items-center gap-2 text-sm sm:text-base">
-                    <i data-lucide="message-square" class="w-5 h-5"></i> WhatsApp Query
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT US SECTION -->
-    <section id="about" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-100 grid md:grid-cols-3 gap-8 items-center">
-            <div class="md:col-span-2 space-y-4">
-                <span class="text-xs font-bold text-kiptas-gold uppercase tracking-wider block">Why KIPTAS Management?</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-kiptas-navy">We Treat Our Clients Like Family</h2>
-                <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
-                    At KIPTAS, we handle your financial and protection requirements smoothly and transparently. With over three decades of professional experience in protecting assets, sourcing lines of credit, and structuring investments, we focus completely on your peace of mind and long-term security.
-                </p>
-            </div>
-            <div class="bg-kiptas-light p-6 rounded-2xl border border-slate-200/60 text-center space-y-2">
-                <div class="text-4xl font-black text-kiptas-navy">30+</div>
-                <div class="text-xs font-bold text-slate-500 uppercase tracking-widest">Years of Trust & Expertise</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OUR SOLUTIONS HUB -->
-    <section id="services" class="py-16 bg-white border-t border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
-                <h2 class="text-2xl sm:text-3xl font-bold text-kiptas-navy">Our Financial & Insurance Solutions Hub</h2>
-                <p class="text-slate-500 text-xs sm:text-sm">Explore our specialized financial solutions below and submit your query directly.</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
-                <!-- 1. Mutual Funds -->
-                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
-                    <div class="w-12 h-12 bg-emerald-100 text-kiptas-green rounded-xl flex items-center justify-center group-hover:bg-kiptas-green group-hover:text-white transition-colors">
-                        <i data-lucide="trending-up" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-kiptas-navy text-sm">Mutual Funds</h3>
-                </div>
-
-                <!-- 2. Deposits -->
-                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
-                    <div class="w-12 h-12 bg-blue-100 text-kiptas-navy rounded-xl flex items-center justify-center group-hover:bg-kiptas-navy group-hover:text-white transition-colors">
-                        <i data-lucide="landmark" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-kiptas-navy text-sm">Deposits</h3>
-                </div>
-
-                <!-- 3. Life & Health Insurance -->
-                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                        <i data-lucide="shield" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-kiptas-navy text-sm">Life & Health Cover</h3>
-                </div>
-
-                <!-- 4. Motor Insurance -->
-                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
-                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                        <i data-lucide="car" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-kiptas-navy text-sm">Motor Insurance</h3>
-                </div>
-
-                <!-- 5. General Insurance -->
-                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
-                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition-colors">
-                        <i data-lucide="shield-alert" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-kiptas-navy text-sm">General Insurance</h3>
-                </div>
-
-                <!-- 6. Loans -->
-                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
-                    <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                        <i data-lucide="wallet" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="font-bold text-kiptas-navy text-sm">Loans</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FINANCIAL CALCULATORS SUITE -->
-    <section id="calculators" class="py-16 bg-slate-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
-                <h2 class="text-2xl sm:text-3xl font-bold text-kiptas-navy">Smart Planning Toolkits</h2>
-                <p class="text-slate-500 text-xs sm:text-sm">Calculate compounding values or measure exact safe life insurance parameters instantly.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- SIP Wealth Calculator -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-100 space-y-6">
-                    <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
-                        <div class="w-10 h-10 bg-emerald-100 text-kiptas-green rounded-lg flex items-center justify-center"><i data-lucide="line-chart" class="w-5 h-5"></i></div>
-                        <div>
-                            <h3 class="font-bold text-kiptas-navy text-lg">SIP Wealth Calculator</h3>
-                            <p class="text-xs text-slate-400">Calculate month-on-month wealth compounding effect</p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Monthly Investment (₹)</label>
-                            <input type="number" id="sip-monthly" value="5000" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-kiptas-gold" oninput="calculateSIP()">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Expected Return Rate (% per year)</label>
-                            <input type="number" id="sip-rate" value="12" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-kiptas-gold" oninput="calculateSIP()">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Time Horizon (Years)</label>
-                            <input type="number" id="sip-years" value="10" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-kiptas-gold" oninput="calculateSIP()">
-                        </div>
-                    </div>
-                    <div class="bg-kiptas-light p-4 rounded-xl space-y-3 text-sm">
-                        <div class="flex justify-between border-b border-slate-200/60 pb-2"><span class="text-slate-500">Total Money Invested:</span><span class="font-bold text-kiptas-navy" id="sip-invested">₹6,0,000</span></div>
-                        <div class="flex justify-between border-b border-slate-200/60 pb-2"><span class="text-slate-500">Estimated Returns Earned:</span><span class="font-bold text-kiptas-green" id="sip-gained">₹5,61,695</span></div>
-                        <div class="flex justify-between pt-1 text-base font-extrabold"><span class="text-kiptas-navy">Total Maturity Value:</span><span class="text-kiptas-navy" id="sip-total">₹11,61,695</span></div>
-                    </div>
-                </div>
-
-                <!-- HLV Calculator -->
-                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-100 space-y-6">
-                    <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
-                        <div class="w-10 h-10 bg-blue-100 text-kiptas-navy rounded-lg flex items-center justify-center"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
-                        <div>
-                            <h3 class="font-bold text-kiptas-navy text-lg">Human Life Value (HLV) Calculator</h3>
-                            <p class="text-xs text-slate-400">Scientific income replacement model used across India</p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Current Age</label>
-                                <input type="number" id="hlv-age" value="30" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-kiptas-gold" oninput="calculateHLV()">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Retirement Age</label>
-                                <input type="number" id="hlv-retire" value="60" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-kiptas-gold" oninput="calculateHLV()">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Your Gross Annual Income (₹)</label>
-                            <input type="number" id="hlv-income" value="800000" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-kiptas-gold" oninput="calculateHLV()">
-                        </div>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Personal Expense (%)</label>
-                                <select id="hlv-expense" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50 text-slate-600 focus:outline-none" onchange="calculateHLV()">
-                                    <option value="20">20%</option>
-                                    <option value="30" selected>30%</option>
-                                    <option value="40">40%</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Outstanding Loans (₹)</label>
-                                <input type="number" id="hlv-loans" value="0" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-slate-50 focus:outline-none focus:border-kiptas-gold" oninput="calculateHLV()">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-kiptas-light p-4 rounded-xl space-y-3 text-sm">
-                        <div class="flex justify-between border-b border-slate-200/60 pb-2"><span class="text-slate-500">Remaining Earning Years:</span><span class="font-bold text-kiptas-navy" id="hlv-years">30 Years</span></div>
-                        <div class="flex justify-between border-b border-slate-200/60 pb-2"><span class="text-slate-500">Net Family Income Support:</span><span class="font-bold text-kiptas-navy" id="hlv-pool">₹5,60,000 / Year</span></div>
-                        <div class="flex justify-between pt-1 text-base font-extrabold"><span class="text-kiptas-navy">Recommended Term Policy Cover:</span><span class="text-red-600" id="hlv-total">₹1.68 Crores</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LIVE CONNECTED GOOGLE FORM REQUIREMENT SECTION -->
-    <section id="requirement-form" class="py-16 max-w-4xl mx-auto px-4 sm:px-6">
-        <div class="bg-white p-4 sm:p-8 rounded-2xl shadow-xl border border-slate-100 space-y-6">
-            <div class="text-center space-y-1 mb-4">
+<!-- PREMIUM INTEGRATED FORM ROUTING SYSTEM -->
+    <section id="requirement-form" class="py-16 max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl border border-slate-100 space-y-6">
+            <div class="text-center space-y-1">
                 <h3 class="text-xl sm:text-2xl font-bold text-kiptas-navy">Submit Your Requirements</h3>
-                <p class="text-xs sm:text-sm text-slate-500">Fill out your parameters securely below. Details land directly in our Google Drive spreadsheet.</p>
+                <p class="text-xs sm:text-sm text-slate-500">Fill in your details securely below. Our data analyst network captures parameters instantly.</p>
             </div>
             
-            <!-- Embedded Google Form Portal Connection -->
-            <div class="w-full overflow-hidden rounded-xl bg-slate-50 border border-slate-200 shadow-inner">
-                <iframe 
-                    src="https://docs.google.com/forms/d/e/1FAIpQLScuLHDGthGiY5Ohid-RW6A7-FQuUuaoSLnyGOv0m0vCEa2OpQ/viewform?embedded=true" 
-                    width="100%" 
-                    height="950" 
-                    frameborder="0" 
-                    marginheight="0" 
-                    marginwidth="0"
-                    class="w-full">
-                    Loading Form...
-                </iframe>
-            </div>
+            <!-- Sleek Front-end Form that sends data directly to Google Forms in the background -->
+            <form id="kiptas-lead-form" class="space-y-4" onsubmit="submitToGoogleForm(event)">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Your Full Name</label>
+                        <input type="text" id="form-name" required class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-slate-50">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Contact Number</label>
+                        <input type="tel" id="form-phone" required class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-slate-50">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-1">What solution do you want parameters for?</label>
+                    <select id="form-service" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-slate-50 text-slate-700 font-medium" onchange="adjustFormQuestions()">
+                        <option value="Mutual Funds">Mutual Funds Investment Setup</option>
+                        <option value="Deposit">Fixed / Recurring Deposit Portfolios</option>
+                        <option value="Insurance">Life & Health Protection Covers</option>
+                        <option value="Motor Insurance">Motor Insurance (Car / Bike)</option>
+                        <option value="General Insurance">General Insurance Suite</option>
+                        <option value="Loan">Loans / Credit Lines</option>
+                    </select>
+                </div>
+
+                <!-- DYNAMICALLY ADAPTING QUESTION FIELDS -->
+                <div id="dynamic-fields" class="bg-kiptas-light p-4 rounded-xl border border-slate-200/50 space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1" id="lbl-f1">Target Monthly Capital / Lump Sum Allocation (₹)</label>
+                        <input type="text" id="custom-field-1" value="₹5,000 / Month" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-kiptas-gold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1" id="lbl-f2">Target Horizon Duration Milestone</label>
+                        <input type="text" id="custom-field-2" value="3 to 5 Years" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-kiptas-gold">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Additional Queries / Specific Notes</label>
+                    <textarea id="form-msg" rows="3" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-slate-50" placeholder="Please mention any structural requests or timeline markers..."></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="w-full bg-kiptas-navy hover:bg-slate-800 text-white font-bold py-3 rounded-lg transition-colors text-sm shadow-md shadow-kiptas-navy/10">
+                    Request Secure Callback Quote
+                </button>
+            </form>
         </div>
     </section>
 
-    <!-- FOOTER WITH CONTACT DETAILS -->
-    <footer class="bg-kiptas-navy text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-xs sm:text-sm">
-            <div class="space-y-3">
-                <span class="text-base sm:text-lg font-bold tracking-wider text-white">KIPTAS <span class="text-kiptas-gold">MANAGEMENT</span></span>
-                <p class="text-slate-500 leading-relaxed text-xs">Private Limited Company specializing in end-to-end investment architectures, loan arrangements, and insurance optimization plans across India.</p>
-            </div>
-            <div>
-                <h5 class="text-white font-bold mb-3 text-xs tracking-wider uppercase">Direct Contact Channels</h5>
-                <ul class="space-y-2 text-xs">
-                    <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-kiptas-gold"></i> Phone: <a href="tel:8527404538" class="text-white hover:underline">8527404538</a></li>
-                    <li class="flex items-center gap-2"><i data-lucide="message-square" class="w-4 h-4 text-kiptas-green"></i> WhatsApp: <a href="https://wa.me/9415480586" target="_blank" class="text-white hover:underline">9415480586</a></li>
-                    <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-kiptas-gold"></i> Email: <a href="mailto:kmpl.14524@gmail.com" class="text-white hover:underline">kmpl.14524@gmail.com</a></li>
-                </ul>
-            </div>
-            <div class="space-y-2 text-xs text-slate-500">
-                <h5 class="text-white font-bold mb-3 text-xs tracking-wider uppercase">Corporate Identity</h5>
-                <p>KIPTAS Management Private Limited</p>
-                <p>Corporate Financial Advisory Group</p>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-slate-800/60 text-center text-xs text-slate-600">
-            &copy; 2026 KIPTAS Management Private Limited. All Rights Reserved.
-        </div>
-    </footer>
-
-    <!-- WHATSAPP FLOATING BUTTON -->
-    <a href="https://wa.me/9415480586" target="_blank" class="fixed bottom-6 right-6 bg-kiptas-green text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center" title="Chat on WhatsApp">
-        <i data-lucide="message-circle" class="w-7 h-7"></i>
-    </a>
-
-    <!-- JAVASCRIPT RESPONSIVE INTERACTION OPERATIONS -->
+    <!-- HIDE THE ORIGINAL GOOGLE FORM LINK IN THE JAVASCRIPT BACKGROUND ENGINE -->
     <script>
-        lucide.createIcons();
+        function submitToGoogleForm(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.innerText = "Processing Securely...";
+            submitBtn.disabled = true;
 
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            // Gathering details from your premium website form inputs
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const service = document.getElementById('form-service').value;
+            const f1 = document.getElementById('custom-field-1').value;
+            const f2 = document.getElementById('custom-field-2').value;
+            const msg = document.getElementById('form-msg').value;
 
-        function scrollToForm() {
-            document.getElementById('requirement-form').scrollIntoView({ behavior: 'smooth' });
-        }
+            // Merging fields into one master paragraph to feed smoothly into your Google Form's open fields
+            const fullRequirementNotes = `Service Requested: ${service} | Detail 1: ${f1} | Detail 2: ${f2} | Message: ${msg}`;
 
-        function formatIndianCurrency(num) { return "₹" + Math.round(num).toLocaleString('en-IN'); }
+            // Target your official Google Form submission pipeline endpoint directly
+            const googleFormBaseUrl = "https://docs.google.com/forms/d/e/1FAIpQLScuLHDGthGiY5Ohid-RW6A7-FQuUuaoSLnyGOv0m0vCEa2OpQ/formResponse";
+            
+            // Build the background package
+            const formData = new FormData();
+            
+            // Google Form field entries map
+            formData.append("entry.2005620554", name); // Passes Name directly to Google Form "Full Name" 
+            formData.append("entry.1166974658", phone); // Passes Contact Number
+            formData.append("entry.839337160", fullRequirementNotes); // Passes all structural criteria safely into your description sheet block
 
-        function calculateSIP() {
-            const P = parseFloat(document.getElementById('sip-monthly').value) || 0;
-            const yearlyRate = parseFloat(document.getElementById('sip-rate').value) || 0;
-            const years = parseFloat(document.getElementById('sip-years').value) || 0;
-            const i = (yearlyRate / 12) / 100; const n = years * 12;
-            let totalMaturity = i > 0 ? P * [ (Math.pow(1 + i, n) - 1) / i ] * (1 + i) : P * n;
-            const totalInvested = P * n;
-            document.getElementById('sip-invested').innerText = formatIndianCurrency(totalInvested);
-            document.getElementById('sip-gained').innerText = formatIndianCurrency(totalMaturity - totalInvested > 0 ? totalMaturity - totalInvested : 0);
-            document.getElementById('sip-total').innerText = formatIndianCurrency(totalMaturity);
-        }
-
-        function calculateHLV() {
-            const age = parseInt(document.getElementById('hlv-age').value) || 0;
-            const retire = parseInt(document.getElementById('hlv-retire').value) || 0;
-            const income = parseFloat(document.getElementById('hlv-income').value) || 0;
-            const expPct = parseFloat(document.getElementById('hlv-expense').value) || 0;
-            const loans = parseFloat(document.getElementById('hlv-loans').value) || 0;
-            const remainingYears = retire - age;
-            document.getElementById('hlv-years').innerText = remainingYears > 0 ? `${remainingYears} Years` : "0 Years";
-            if (remainingYears <= 0) { document.getElementById('hlv-pool').innerText = "₹0"; document.getElementById('hlv-total').innerText = "₹0"; return; }
-            const annualPool = income * ((100 - expPct) / 100);
-            document.getElementById('hlv-pool').innerText = formatIndianCurrency(annualPool) + " / Year";
-            const pvFactor = (1 - Math.pow(1 + 0.065, -remainingYears)) / 0.065;
-            const recommendedTermCover = (annualPool * pvFactor) + loans;
-            document.getElementById('hlv-total').innerText = recommendedTermCover >= 10000000 ? `₹${(recommendedTermCover / 10000000).toFixed(2)} Crores` : `₹${(recommendedTermCover / 100000).toFixed(2)} Lakhs`;
-        }
-
-        window.onload = function() { calculateSIP(); calculateHLV(); };
-    </script>
-
-    <!-- OFFICIAL GOOGLE TRANSLATION CONNECTOR ENGINE -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_element_desktop');
-            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_element_mobile');
+            // Send data silently in the background
+            fetch(googleFormBaseUrl, {
+                method: "POST",
+                mode: "no-cors",
+                body: formData
+            }).then(() => {
+                alert(`Success! Thank you, ${name}. Your requirements profile has been securely fed directly to our management dashboard database.`);
+                document.getElementById('kiptas-lead-form').reset();
+                submitBtn.innerText = "Request Secure Callback Quote";
+                submitBtn.disabled = false;
+            }).catch(error => {
+                console.error('Error submitting form', error);
+                submitBtn.innerText = "Request Secure Callback Quote";
+                submitBtn.disabled = false;
+            });
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-</html>
