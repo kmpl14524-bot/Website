@@ -296,7 +296,7 @@
                 <p class="text-xs sm:text-sm text-slate-500">Fill in your details securely below. Our data analyst network captures parameters instantly.</p>
             </div>
             
-            <form id="kiptas-lead-form" class="space-y-4" onsubmit="submitToGoogleForm(event)">
+            <form id="kiptas-lead-form" class="space-y-4" onsubmit="submitToFormspree(event)">
                 <div class="grid sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Your Full Name</label>
@@ -452,7 +452,7 @@
 
         window.onload = function() { calculateSIP(); calculateHLV(); };
 
-        function submitToGoogleForm(event) {
+        function submitToFormspree(event) {
             event.preventDefault();
             
             const submitBtn = document.getElementById('submit-btn');
@@ -466,25 +466,37 @@
             const f2 = document.getElementById('custom-field-2').value;
             const msg = document.getElementById('form-msg').value;
 
-            const fullRequirementNotes = `Service Requested: ${service} | Detail 1: ${f1} | Detail 2: ${f2} | Message: ${msg}`;
-            const googleFormBaseUrl = "https://docs.google.com/forms/d/e/1FAIpQLScuLHDGthGiY5Ohid-RW6A7-FQuUuaoSLnyGOv0m0vCEa2OpQ/formResponse";
+            // Connected directly to your active Formspree endpoint link
+            const formspreeUrl = "https://formspree.io/f/mjgqvgvo";
             
-            const formData = new FormData();
-            formData.append("entry.2005620554", name); 
-            formData.append("entry.1166974658", phone); 
-            formData.append("entry.839337160", fullRequirementNotes); 
+            const payload = {
+                "Client Name": name,
+                "Contact Number": phone,
+                "Service Chosen": service,
+                "Parameter 1": f1,
+                "Parameter 2": f2,
+                "Client Notes": msg
+            };
 
-            fetch(googleFormBaseUrl, {
+            fetch(formspreeUrl, {
                 method: "POST",
-                mode: "no-cors",
-                body: formData
-            }).then(() => {
-                alert(`Success! Thank you, ${name}. Your requirements profile has been securely fed directly to our management dashboard database.`);
-                document.getElementById('kiptas-lead-form').reset();
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(payload)
+            }).then(response => {
+                if (response.ok) {
+                    alert(`Success! Thank you, ${name}. Your requirements profile has been securely logged.`);
+                    document.getElementById('kiptas-lead-form').reset();
+                } else {
+                    alert("Submission failed. Please try again.");
+                }
                 submitBtn.innerText = "Request Secure Callback Quote";
                 submitBtn.disabled = false;
             }).catch(error => {
-                console.error('Error submitting form', error);
+                console.error('Submission error', error);
+                alert("An error occurred. Sourcing fallback channels...");
                 submitBtn.innerText = "Request Secure Callback Quote";
                 submitBtn.disabled = false;
             });
