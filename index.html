@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIPTAS Management Private Limited | Your Financial Partner</title>
+    <!-- Tailwind CSS for Beautiful, Professional Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for Visual Symbols -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
@@ -22,6 +24,7 @@
             }
         }
     </script>
+    <!-- Styling overrides for clean formatting and hidden elements -->
     <style>
         .goog-te-gadget iframe { display: none !important; }
         .goog-te-gadget { font-size: 0px !important; }
@@ -41,8 +44,10 @@
 </head>
 <body class="bg-kiptas-light text-slate-800 font-sans antialiased">
 
+    <!-- FIXED TOP NAVIGATION BAR (With Logo fixed in top left corner) -->
     <nav class="fixed w-full bg-kiptas-navy/95 backdrop-blur-md text-white z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo Space (Top Left Corner) -->
             <a href="#" class="flex items-center gap-3">
                 <img src="logo.png" alt="KIPTAS Logo" class="h-14 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
                 <div id="text-logo" class="hidden">
@@ -50,12 +55,14 @@
                 </div>
             </a>
 
+            <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center gap-6 text-sm font-semibold">
                 <a href="#about" class="hover:text-kiptas-gold transition-colors">About Us</a>
                 <a href="#services" class="hover:text-kiptas-gold transition-colors">Services</a>
                 <a href="#calculators" class="hover:text-kiptas-gold transition-colors">Financial Calculators</a>
                 <a href="#requirement-form" class="hover:text-kiptas-gold transition-colors">Submit Requirement</a>
                 
+                <!-- GOOGLE TRANSLATE BOX FOR DESKTOP -->
                 <div id="google_element_desktop"></div>
 
                 <a href="tel:8527404538" class="flex items-center gap-2 bg-kiptas-gold text-kiptas-navy px-4 py-2 rounded-lg font-bold hover:bg-yellow-500 transition-all whitespace-nowrap">
@@ -63,17 +70,20 @@
                 </a>
             </div>
 
+            <!-- Mobile Menu button -->
             <button id="menu-btn" class="lg:hidden text-white hover:text-kiptas-gold transition-colors">
                 <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
         </div>
         
+        <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden lg:hidden bg-kiptas-navy border-t border-slate-700 px-6 py-4 space-y-4">
             <a href="#about" class="block text-slate-200 hover:text-kiptas-gold py-1">About Us</a>
             <a href="#services" class="block text-slate-200 hover:text-kiptas-gold py-1">Services</a>
             <a href="#calculators" class="block text-slate-200 hover:text-kiptas-gold py-1">Financial Calculators</a>
             <a href="#requirement-form" class="block text-slate-200 hover:text-kiptas-gold py-1">Submit Requirement</a>
             
+            <!-- GOOGLE TRANSLATE BOX FOR MOBILE -->
             <div class="py-2 border-t border-b border-slate-700/50">
                 <p class="text-xs text-slate-400 mb-2 font-bold uppercase tracking-wider">Select Language / भाषा चुनें</p>
                 <div id="google_element_mobile"></div>
@@ -83,8 +93,14 @@
         </div>
     </nav>
 
-    <section class="pt-32 pb-20 bg-gradient-to-br from-kiptas-navy to-slate-900 text-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+    <!-- HERO WELCOME SECTION -->
+    <section class="pt-40 pb-24 bg-gradient-to-br from-kiptas-navy to-slate-900 text-white relative overflow-hidden">
+        <!-- Dynamic Background Watermark Layer -->
+        <div class="absolute inset-0 z-0 opacity-10 flex items-center justify-center pointer-events-none scale-100 blur-[1px]">
+            <img src="logo.png" alt="KIPTAS Watermark Background" class="max-w-2xl w-full h-auto object-contain">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
             <div class="inline-block bg-white/10 text-kiptas-gold border border-white/20 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">
                 30 Years of Trusted Financial & Insurance Experience
             </div>
@@ -94,10 +110,11 @@
             <p class="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto font-medium">
                 Protect Today • Invest Wisely • Secure Tomorrow
             </p>
-            
-            <div class="flex flex-wrap justify-center gap-4 pt-4">
-                <a href="#requirement-form" class="bg-kiptas-gold text-kiptas-navy hover:bg-yellow-500 px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg text-sm sm:text-base">
-                    Get Instant Insurance Quote
+
+            <!-- Quick Action Buttons (Optimized for balance) -->
+            <div class="flex flex-wrap justify-center gap-4 pt-8">
+                <a href="#requirement-form" class="bg-kiptas-gold text-kiptas-navy hover:bg-yellow-500 px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg text-sm sm:text-base tracking-wide">
+                    Submit Financial Requirement
                 </a>
                 <a href="https://wa.me/9415480586" target="_blank" class="bg-kiptas-green hover:bg-emerald-700 text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg flex items-center gap-2 text-sm sm:text-base">
                     <i data-lucide="message-square" class="w-5 h-5"></i> WhatsApp Query
@@ -106,6 +123,7 @@
         </div>
     </section>
 
+    <!-- ABOUT US SECTION -->
     <section id="about" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-slate-100 grid md:grid-cols-3 gap-8 items-center">
             <div class="md:col-span-2 space-y-4">
@@ -122,50 +140,57 @@
         </div>
     </section>
 
+    <!-- OUR SOLUTIONS HUB -->
     <section id="services" class="py-16 bg-white border-t border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
                 <h2 class="text-2xl sm:text-3xl font-bold text-kiptas-navy">Our Financial & Insurance Solutions Hub</h2>
-                <p class="text-slate-500 text-xs sm:text-sm">Click on any solution below to load its special requirements questionnaire instantly.</p>
+                <p class="text-slate-500 text-xs sm:text-sm">Explore our specialized financial solutions below and submit your query directly.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
-                <div onclick="selectServiceForm('Mutual Funds')" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
+                <!-- 1. Mutual Funds -->
+                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
                     <div class="w-12 h-12 bg-emerald-100 text-kiptas-green rounded-xl flex items-center justify-center group-hover:bg-kiptas-green group-hover:text-white transition-colors">
                         <i data-lucide="trending-up" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-bold text-kiptas-navy text-sm">Mutual Funds</h3>
                 </div>
 
-                <div onclick="selectServiceForm('Deposit')" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
+                <!-- 2. Deposits -->
+                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
                     <div class="w-12 h-12 bg-blue-100 text-kiptas-navy rounded-xl flex items-center justify-center group-hover:bg-kiptas-navy group-hover:text-white transition-colors">
                         <i data-lucide="landmark" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-bold text-kiptas-navy text-sm">Deposits</h3>
                 </div>
 
-                <div onclick="selectServiceForm('Insurance')" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
+                <!-- 3. Life & Health Insurance -->
+                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
                     <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center group-hover:bg-purple-600 group-hover:text-white transition-colors">
                         <i data-lucide="shield" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-bold text-kiptas-navy text-sm">Life & Health Cover</h3>
                 </div>
 
-                <div onclick="selectServiceForm('Motor Insurance')" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
+                <!-- 4. Motor Insurance -->
+                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
                     <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
                         <i data-lucide="car" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-bold text-kiptas-navy text-sm">Motor Insurance</h3>
                 </div>
 
-                <div onclick="selectServiceForm('General Insurance')" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
+                <!-- 5. General Insurance -->
+                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
                     <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center group-hover:bg-rose-600 group-hover:text-white transition-colors">
                         <i data-lucide="shield-alert" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-bold text-kiptas-navy text-sm">General Insurance</h3>
                 </div>
 
-                <div onclick="selectServiceForm('Loan')" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
+                <!-- 6. Loans -->
+                <div onclick="scrollToForm()" class="cursor-pointer border border-slate-100 bg-kiptas-light/60 p-6 rounded-2xl text-center space-y-3 hover:border-kiptas-gold hover:shadow-md transition-all flex flex-col justify-between items-center group">
                     <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
                         <i data-lucide="wallet" class="w-6 h-6"></i>
                     </div>
@@ -175,6 +200,7 @@
         </div>
     </section>
 
+    <!-- FINANCIAL CALCULATORS SUITE -->
     <section id="calculators" class="py-16 bg-slate-50 border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
@@ -183,6 +209,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-12">
+                <!-- SIP Wealth Calculator -->
                 <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-100 space-y-6">
                     <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
                         <div class="w-10 h-10 bg-emerald-100 text-kiptas-green rounded-lg flex items-center justify-center"><i data-lucide="line-chart" class="w-5 h-5"></i></div>
@@ -206,12 +233,13 @@
                         </div>
                     </div>
                     <div class="bg-kiptas-light p-4 rounded-xl space-y-3 text-sm">
-                        <div class="flex justify-between border-b border-slate-200/60 pb-2"><span class="text-slate-500">Total Money Invested:</span><span class="font-bold text-kiptas-navy" id="sip-invested">₹6,00,000</span></div>
+                        <div class="flex justify-between border-b border-slate-200/60 pb-2"><span class="text-slate-500">Total Money Invested:</span><span class="font-bold text-kiptas-navy" id="sip-invested">₹6,0,000</span></div>
                         <div class="flex justify-between border-b border-slate-200/60 pb-2"><span class="text-slate-500">Estimated Returns Earned:</span><span class="font-bold text-kiptas-green" id="sip-gained">₹5,61,695</span></div>
                         <div class="flex justify-between pt-1 text-base font-extrabold"><span class="text-kiptas-navy">Total Maturity Value:</span><span class="text-kiptas-navy" id="sip-total">₹11,61,695</span></div>
                     </div>
                 </div>
 
+                <!-- HLV Calculator -->
                 <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-lg border border-slate-100 space-y-6">
                     <div class="flex items-center gap-3 pb-3 border-b border-slate-100">
                         <div class="w-10 h-10 bg-blue-100 text-kiptas-navy rounded-lg flex items-center justify-center"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
@@ -260,70 +288,31 @@
         </div>
     </section>
 
-    <section id="requirement-form" class="py-16 max-w-3xl mx-auto px-4 sm:px-6">
-        <div class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl border border-slate-100 space-y-6">
-            <div class="text-center space-y-1">
-                <h3 class="text-xl sm:text-2xl font-bold text-kiptas-navy">Submit Your Information Requirement</h3>
-                <p class="text-xs sm:text-sm text-slate-500">Fill in your information parameters below to fetch customized pricing quotes securely.</p>
+    <!-- LIVE CONNECTED GOOGLE FORM REQUIREMENT SECTION -->
+    <section id="requirement-form" class="py-16 max-w-4xl mx-auto px-4 sm:px-6">
+        <div class="bg-white p-4 sm:p-8 rounded-2xl shadow-xl border border-slate-100 space-y-6">
+            <div class="text-center space-y-1 mb-4">
+                <h3 class="text-xl sm:text-2xl font-bold text-kiptas-navy">Submit Your Requirements</h3>
+                <p class="text-xs sm:text-sm text-slate-500">Fill out your parameters securely below. Details land directly in our Google Drive spreadsheet.</p>
             </div>
             
-            <form class="space-y-4" onsubmit="sendToEmailOrAlert(event)">
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Your Full Name</label>
-                        <input type="text" id="form-name" required class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-slate-50">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Contact Number</label>
-                        <input type="tel" id="form-phone" required class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-slate-50">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-600 uppercase mb-1">What solution do you want parameters for?</label>
-                    <select id="form-service" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-slate-50 text-slate-700 font-medium" onchange="adjustFormQuestions()">
-                        <option value="Mutual Funds">Mutual Funds Investment Setup</option>
-                        <option value="Deposit">Fixed / Recurring Deposit Portfolios</option>
-                        <option value="Insurance">Life & Health Protection Covers</option>
-                        <option value="Motor Insurance">Motor Insurance (Car / Bike / Fleet)</option>
-                        <option value="General Insurance">General Insurance Suite</option>
-                        <option value="Loan">Institutional & Personal Loan Syndications</option>
-                    </select>
-                </div>
-
-                <div id="general-insurance-subfield" class="hidden">
-                    <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Type of General Insurance Required</label>
-                    <select id="form-general-type" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-amber-50 font-medium text-slate-800">
-                        <option value="Property">Property Insurance</option>
-                        <option value="Marine">Marine Insurance</option>
-                        <option value="Miscellaneous">Miscellaneous Insurance</option>
-                        <option value="Personal Accident">Personal Accident Insurance</option>
-                    </select>
-                </div>
-
-                <div id="dynamic-fields" class="bg-kiptas-light p-4 rounded-xl border border-slate-200/50 space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1" id="lbl-f1">Target Monthly Capital / Lump Sum Allocation (₹)</label>
-                        <input type="text" id="custom-field-1" value="₹5,000 / Month" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-kiptas-gold">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-600 uppercase mb-1" id="lbl-f2">Target Horizon Duration Milestone</label>
-                        <input type="text" id="custom-field-2" value="3 to 5 Years" class="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm bg-white focus:outline-none focus:border-kiptas-gold">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-600 uppercase mb-1">Additional Queries / Specific Notes</label>
-                    <textarea id="form-msg" rows="3" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:border-kiptas-gold text-sm bg-slate-50" placeholder="Please mention any structural requests or timeline markers..."></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-kiptas-navy hover:bg-slate-800 text-white font-bold py-3 rounded-lg transition-colors text-sm shadow-md shadow-kiptas-navy/10">
-                    Request Secure Callback Quote
-                </button>
-            </form>
+            <!-- Embedded Google Form Portal Connection -->
+            <div class="w-full overflow-hidden rounded-xl bg-slate-50 border border-slate-200 shadow-inner">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScuLHDGthGiY5Ohid-RW6A7-FQuUuaoSLnyGOv0m0vCEa2OpQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="950" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    class="w-full">
+                    Loading Form...
+                </iframe>
+            </div>
         </div>
     </section>
 
+    <!-- FOOTER WITH CONTACT DETAILS -->
     <footer class="bg-kiptas-navy text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 text-xs sm:text-sm">
             <div class="space-y-3">
@@ -349,72 +338,23 @@
         </div>
     </footer>
 
+    <!-- WHATSAPP FLOATING BUTTON -->
     <a href="https://wa.me/9415480586" target="_blank" class="fixed bottom-6 right-6 bg-kiptas-green text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center" title="Chat on WhatsApp">
         <i data-lucide="message-circle" class="w-7 h-7"></i>
     </a>
 
+    <!-- JAVASCRIPT RESPONSIVE INTERACTION OPERATIONS -->
     <script>
-        // Make sure all vector images render inside cards cleanly
         lucide.createIcons();
 
-        // Responsive Dropdown Toggle
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-        // Function allowing cards on top to automatically slide down and select dropdown targets
-        function selectServiceForm(serviceValue) {
-            const dropdown = document.getElementById('form-service');
-            dropdown.value = serviceValue;
-            
-            // Execute text adaptations immediately
-            adjustFormQuestions();
-            
-            // Smooth view scroll down into the form section zone
+        function scrollToForm() {
             document.getElementById('requirement-form').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // ADAPTING CONTEXT ENGINE LOGIC
-        function adjustFormQuestions() {
-            const chosenService = document.getElementById('form-service').value;
-            const subDropdownContainer = document.getElementById('general-insurance-subfield');
-            const f1Label = document.getElementById('lbl-f1');
-            const f2Label = document.getElementById('lbl-f2');
-            const f1Input = document.getElementById('custom-field-1');
-            const f2Input = document.getElementById('custom-field-2');
-
-            // Toggle subdropdown view visibility logic for General Insurance choices
-            if (chosenService === "General Insurance") {
-                subDropdownContainer.classList.remove('hidden');
-            } else {
-                subDropdownContainer.classList.add('hidden');
-            }
-
-            // Text adaptation values based on selected targets
-            if (chosenService === "Mutual Funds" || chosenService === "Deposit") {
-                f1Label.innerText = "Target Monthly Capital / Lump Sum Allocation (₹)";
-                f2Label.innerText = "Target Horizon Duration Milestone";
-                f1Input.value = "₹5,000 / Month"; f2Input.value = "3 to 5 Years";
-            } else if (chosenService === "Insurance") {
-                f1Label.innerText = "Current Age & Occupation Profile";
-                f2Label.innerText = "Insurance Objective Preferred Choice";
-                f1Input.value = "30 Years Old, Business Owner"; f2Input.value = "Term Plan Protection / Health Policy";
-            } else if (chosenService === "Motor Insurance") {
-                f1Label.innerText = "Vehicle Registration Details / Model & Variant Type";
-                f2Label.innerText = "Previous Policy Expiry Status & No Claim Bonus (NCB %)";
-                f1Input.value = "DL-3C-XX-XXXX, Swift VXI 2023"; f2Input.value = "Expiring next week, 20% NCB";
-            } else if (chosenService === "General Insurance") {
-                f1Label.innerText = "Asset / Risk Valuation Baseline Cover Limit (₹)";
-                f2Label.innerText = "Risk Location Address / Operational Details";
-                f1Input.value = "₹50 Lakhs Protection Pool"; f2Input.value = "Warehouse Premises Location";
-            } else if (chosenService === "Loan") {
-                f1Label.innerText = "Required Principal Funding Requirement Limit (₹)";
-                f2Label.innerText = "Available Collateral Security Anchor Anchor Asset";
-                f1Input.value = "₹25 Lakhs Line of Credit"; f2Input.value = "Commercial Property LAP Documentation";
-            }
-        }
-
-        // Financial Calculation Logic Sheets
         function formatIndianCurrency(num) { return "₹" + Math.round(num).toLocaleString('en-IN'); }
 
         function calculateSIP() {
@@ -446,23 +386,9 @@
         }
 
         window.onload = function() { calculateSIP(); calculateHLV(); };
-
-        // Lead execution pipeline router
-        function sendToEmailOrAlert(event) {
-            event.preventDefault();
-            const name = document.getElementById('form-name').value;
-            const phone = document.getElementById('form-phone').value;
-            const service = document.getElementById('form-service').value;
-            const subType = service === "General Insurance" ? ` (${document.getElementById('form-general-type').value})` : "";
-            const msg = document.getElementById('form-msg').value;
-            const f1 = document.getElementById('custom-field-1').value;
-            const f2 = document.getElementById('custom-field-2').value;
-
-            alert(`Thank you, ${name}! Your request for "${service}${subType}" has been successfully logged.`);
-            window.location.href = `mailto:kmpl.14524@gmail.com?subject=Kiptas Lead: ${service}${subType}&body=Name: ${name}%0APhone: ${phone}%0AService: ${service}${subType}%0AField 1: ${f1}%0AField 2: ${f2}%0ANotes: ${msg}`;
-        }
     </script>
 
+    <!-- OFFICIAL GOOGLE TRANSLATION CONNECTOR ENGINE -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_element_desktop');
